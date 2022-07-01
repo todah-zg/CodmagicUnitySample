@@ -28,7 +28,7 @@ workflows:
           $UNITY_BIN -batchmode -quit -logFile -projectPath . -executeMethod BuildScript.$BUILD_SCRIPT -nographics -buildTarget iOS          
       - name: Fetch signing files
         script: | 
-          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE
+          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
       - name: Use system default keychain
         script: | 
           keychain add-certificates
